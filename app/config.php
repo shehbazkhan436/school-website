@@ -18,6 +18,6 @@ define('BASE_URL', '/school-website/public');
 // School details (used in the header, footer and contact page)
 define('SCHOOL_NAME', 'Model Public High School');
 define('SCHOOL_TAGLINE', 'Learn today. Lead tomorrow.');
-define('SCHOOL_PHONE', '+92 300 1234567');
+define('SCHOOL_PHONE', '+92 311 9118919');
 define('SCHOOL_EMAIL', 'info@modelschool.edu.pk');
 define('SCHOOL_ADDRESS', 'Maini Ada, Maini (Swabi)');
