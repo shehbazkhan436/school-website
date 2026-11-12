@@ -2,6 +2,9 @@
 /**
  * academics.php - Academics page
  */
+// BOOTSTRAP: load app/bootstrap.php first. It starts the session and loads
+// config.php (settings), helpers.php (e(), url(), redirect()...) and all classes
+// (Database, Auth, News...). Without this line nothing below would work.
 require_once __DIR__ . '/../app/bootstrap.php';
 
 $pageTitle = 'Academics';
@@ -47,19 +50,19 @@ require __DIR__ . '/../app/views/header.php';
 require __DIR__ . '/../app/views/page-hero.php';
 ?>
 
-<section class="section">
-    <div class="container card-grid card-grid-2">
+<section class="section"> <!-- .section = a page block with 80px space top and bottom (style.css part 2) -->
+    <div class="container card-grid card-grid-2"> <!-- .container = centres the content, max 1180px wide (style.css part 2); .card-grid = CSS grid with 24px gap between cards (style.css part 2); .card-grid-2 = 2 columns (style.css part 2) -->
         <?php foreach ($programs as $program): ?>
-            <div class="program">
-                <div class="program-head">
-                    <div class="feature-icon"><?= icon($program['icon']) ?></div>
+            <div class="program"> <!-- .program = program card on Academics (style.css part 6) -->
+                <div class="program-head"> <!-- .program-head = icon + title in a row (style.css part 6) -->
+                    <div class="feature-icon"><?= icon($program['icon']) ?></div> <!-- .feature-icon = light blue square behind an icon (style.css part 6) -->
                     <div>
                         <h3><?= e($program['name']) ?></h3>
                         <span><?= e($program['classes']) ?> &middot; <?= e($program['age']) ?></span>
                     </div>
                 </div>
                 <p><?= e($program['text']) ?></p>
-                <ul class="check-list">
+                <ul class="check-list"> <!-- .check-list = list with green tick icons (style.css part 3) -->
                     <?php foreach ($program['points'] as $point): ?>
                         <li><?= icon('check') ?> <?= e($point) ?></li>
                     <?php endforeach; ?>
@@ -69,17 +72,17 @@ require __DIR__ . '/../app/views/page-hero.php';
     </div>
 </section>
 
-<section class="section section-light">
-    <div class="container">
-        <div class="section-head">
-            <span class="eyebrow">Facilities</span>
+<section class="section section-light"> <!-- .section = a page block with 80px space top and bottom (style.css part 2); .section-light = light grey background for the section (style.css part 2) -->
+    <div class="container"> <!-- .container = centres the content, max 1180px wide (style.css part 2) -->
+        <div class="section-head"> <!-- .section-head = centred title area above a section (style.css part 2) -->
+            <span class="eyebrow">Facilities</span> <!-- .eyebrow = small gold UPPERCASE text above a heading (style.css part 2) -->
             <h2>Our campus</h2>
         </div>
-        <div class="card-grid card-grid-4">
-            <div class="feature feature-small"><div class="feature-icon"><?= icon('book') ?></div><h3>Library</h3></div>
-            <div class="feature feature-small"><div class="feature-icon"><?= icon('flask') ?></div><h3>Science Labs</h3></div>
-            <div class="feature feature-small"><div class="feature-icon"><?= icon('monitor') ?></div><h3>Computer Lab</h3></div>
-            <div class="feature feature-small"><div class="feature-icon"><?= icon('trophy') ?></div><h3>Sports Ground</h3></div>
+        <div class="card-grid card-grid-4"> <!-- .card-grid = CSS grid with 24px gap between cards (style.css part 2); .card-grid-4 = 4 columns (style.css part 2) -->
+            <div class="feature feature-small"><div class="feature-icon"><?= icon('book') ?></div><h3>Library</h3></div> <!-- .feature = white card with border (style.css part 6); .feature-small = small centred card (style.css part 6); .feature-icon = light blue square behind an icon (style.css part 6) -->
+            <div class="feature feature-small"><div class="feature-icon"><?= icon('flask') ?></div><h3>Science Labs</h3></div> <!-- .feature = white card with border (style.css part 6); .feature-small = small centred card (style.css part 6); .feature-icon = light blue square behind an icon (style.css part 6) -->
+            <div class="feature feature-small"><div class="feature-icon"><?= icon('monitor') ?></div><h3>Computer Lab</h3></div> <!-- .feature = white card with border (style.css part 6); .feature-small = small centred card (style.css part 6); .feature-icon = light blue square behind an icon (style.css part 6) -->
+            <div class="feature feature-small"><div class="feature-icon"><?= icon('trophy') ?></div><h3>Sports Ground</h3></div> <!-- .feature = white card with border (style.css part 6); .feature-small = small centred card (style.css part 6); .feature-icon = light blue square behind an icon (style.css part 6) -->
         </div>
     </div>
 </section>

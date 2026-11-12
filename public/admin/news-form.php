@@ -4,6 +4,9 @@
  *   Add:  news-form.php
  *   Edit: news-form.php?id=3
  */
+// BOOTSTRAP: load app/bootstrap.php first. It starts the session and loads
+// config.php (settings), helpers.php (e(), url(), redirect()...) and all classes
+// (Database, Auth, News...). Without this line nothing below would work.
 require_once __DIR__ . '/../../app/bootstrap.php';
 Auth::requireLogin();
 
@@ -58,9 +61,9 @@ $pageTitle = $id > 0 ? 'Edit News' : 'Add News';
 require __DIR__ . '/../../app/views/admin-header.php';
 ?>
 
-<div class="admin-panel admin-form">
+<div class="admin-panel admin-form"> <!-- .admin-panel = white box for tables and forms (admin.css); .admin-form = form max 760px wide (admin.css) -->
     <?php if (!empty($errors)): ?>
-        <div class="alert alert-error">
+        <div class="alert alert-error"> <!-- .alert = message box (style.css part 3); .alert-error = red message box for errors (style.css part 3) -->
             <?php foreach ($errors as $error): ?>
                 <div><?= e($error) ?></div>
             <?php endforeach; ?>
@@ -72,7 +75,7 @@ require __DIR__ . '/../../app/views/admin-header.php';
             <input type="text" name="title" value="<?= e($form['title']) ?>" required>
         </label>
 
-        <div class="form-row">
+        <div class="form-row"> <!-- .form-row = 2 inputs side by side (style.css part 7) -->
             <label>Category *
                 <select name="category">
                     <?php foreach (News::CATEGORIES as $category): ?>
@@ -93,8 +96,8 @@ require __DIR__ . '/../../app/views/admin-header.php';
             <textarea name="body" rows="8" required><?= e($form['body']) ?></textarea>
         </label>
 
-        <button type="submit" class="btn btn-primary">Save</button>
-        <a href="<?= url('admin/news.php') ?>" class="btn btn-outline">Cancel</a>
+        <button type="submit" class="btn btn-primary">Save</button> <!-- .btn = basic round button (style.css part 3); .btn-primary = navy button (style.css part 3) -->
+        <a href="<?= url('admin/news.php') ?>" class="btn btn-outline">Cancel</a> <!-- .btn = basic round button (style.css part 3); .btn-outline = white button with grey border (style.css part 3) -->
     </form>
 </div>
 

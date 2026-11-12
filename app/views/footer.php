@@ -6,10 +6,10 @@
 ?>
 </main>
 
-<footer class="footer">
-    <div class="container footer-grid">
+<footer class="footer"> <!-- .footer = dark footer (style.css part 8) -->
+    <div class="container footer-grid"> <!-- .container = centres the content, max 1180px wide (style.css part 2); .footer-grid = 4 footer columns (style.css part 8) -->
         <div>
-            <a href="<?= url('index.php') ?>" class="logo logo-light">
+            <a href="<?= url('index.php') ?>" class="logo logo-light"> <!-- .logo = logo image + school name in a row (style.css part 4); .logo-light = white school name, for dark backgrounds (style.css part 4) -->
                 <img src="<?= url('assets/img/logo.svg') ?>" alt="" width="40" height="40">
                 <span><strong><?= e(SCHOOL_NAME) ?></strong></span>
             </a>
@@ -28,7 +28,7 @@
 
         <div>
             <h4>Contact</h4>
-            <ul class="footer-contact">
+            <ul class="footer-contact"> <!-- .footer-contact = footer list with icons (style.css part 8) -->
                 <li><?= icon('map') ?> <?= e(SCHOOL_ADDRESS) ?></li>
                 <li><?= icon('phone') ?> <?= e(SCHOOL_PHONE) ?></li>
                 <li><?= icon('mail') ?> <?= e(SCHOOL_EMAIL) ?></li>
@@ -45,8 +45,8 @@
         </div>
     </div>
 
-    <div class="footer-bottom">
-        <div class="container">
+    <div class="footer-bottom"> <!-- .footer-bottom = copyright line (style.css part 8) -->
+        <div class="container"> <!-- .container = centres the content, max 1180px wide (style.css part 2) -->
             &copy; <?= date('Y') ?> <?= e(SCHOOL_NAME) ?>. All rights reserved.
             <a href="<?= url('admin/login.php') ?>">Staff Login</a>
         </div>
